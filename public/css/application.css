@@ -1,6 +1,22 @@
+body {
+    background-image: url("http://i61.tinypic.com/dp96bq.png");
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 500px;
+
+}
+
 .intro {
   text-align: center;
+  font-family: Helvetica;
+  margin-bottom: 150px;
+
 }
+.intro p {
+  font-size: 20px;
+}
+
 
 .container {
   margin: 20px auto;
@@ -11,5 +27,5 @@
 
 .container h1 {
   font-size: 17pt;
-
 }
+
