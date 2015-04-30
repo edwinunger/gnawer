@@ -3,7 +3,6 @@ get '/' do
   @user = User.where(id: @id).first
   puts "went to home page"
   erb :index
-
 end
 
 get '/signup' do
