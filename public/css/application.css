@@ -2,30 +2,20 @@ body {
     background-image: url("http://i61.tinypic.com/dp96bq.png");
     background-color: white;
     background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 500px;
-
+    background-position: fixed;
+      text-align: center;
+  font-family: Cursive;
+  margin-top: 500px;
 }
 
-.intro {
-  text-align: center;
+div p {
+  font-size: 30px;
   font-family: Helvetica;
-  margin-bottom: 150px;
-
-}
-.intro p {
-  font-size: 20px;
 }
 
-
-.container {
-  margin: 20px auto;
-  width: 800px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+input {
+  font-family: Helvetica;
+    text-align: center;
 }
 
-.container h1 {
-  font-size: 17pt;
-}
 
