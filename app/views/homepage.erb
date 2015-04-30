@@ -1,0 +1,9 @@
+<h2>Hello <%= @user.user_name.capitalize %>, heres all of your previous Gnaws! (ya dumb fuck)</h2>
+
+<ol>
+<% @gnaws.each do |gnaw| %>
+   <li><%= gnaw.content %></li>
+<% end %>
+</ol>
+
+<p>hello</p>
