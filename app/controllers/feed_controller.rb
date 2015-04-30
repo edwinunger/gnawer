@@ -1,5 +1,5 @@
-get '/newsfeed' do
-  @user = User.where(id: rand(1..10)).first
+get '/newsfeed/:id' do
+  @user = User.where(id: params[:id]).first
   @gnaws = Gnaw.all
 
   #This gives us all followers of a user

@@ -2,9 +2,9 @@ require 'faker'
 
 10.times do
   user_info = {
-    user_name: Faker::Internet.user_name,
     email: Faker::Internet.email,
-    first_name: Faker::Name.name
+    first_name: Faker::Name.name,
+    password_digest: "123456",
   }
   User.new(user_info).save
   puts "seeding users..."

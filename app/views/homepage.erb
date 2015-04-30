@@ -1,23 +1,25 @@
-<h2>Hello <%= @user.user_name.capitalize %>, heres all of your previous Gnaws! (ya dumb fuck)</h2>
+<h2>Hello <%= @user.first_name .capitalize %>, heres all of your previous Gnaws! (ya dumb fuck)</h2>
 
 <form action="/profile/<%= @user.id %>/create" method="post">
   <textarea name="content" placeholder="Create a Gnaw"></textarea>
   <input type="submit" value="Post">
 </form>
 
-<ol>
-<% @gnaws.each do |gnaw| %>
-   <li><%= gnaw.content %></li>
-   <a href="/profile/<%=gnaw.id%>/delete"><button type="button">Delete</button></a>
-   <p></p>
+<%if @gnaws%>
+  <ol>
+  <% @gnaws.each do |gnaw| %>
+     <li><%= gnaw.content %></li>
+     <a href="/profile/<%=gnaw.id%>/delete"><button type="button">Delete</button></a>
+     <p></p>
+  <% end %>
+  </ol>
 <% end %>
-</ol>
 
 <hr></hr>
 
 <ul>
-  <li><a href="/newsfeed">NewsFeed</a></li>
-  <li><a href="/settings">Account Info</a></li>
+  <li><a href="/newsfeed/<%=@user.id%>">NewsFeed</a></li>
+  <li><a href="/setting/<%=@user.id%>">Account Info</a></li>
   <!-- <li><a href="/followers"></a></li> -->
 </ul>
 
