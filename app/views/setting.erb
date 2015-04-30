@@ -1,0 +1,32 @@
+<div class="intro">
+	<h1> User Settings </h1>
+	<h1> Welcome <%=@user.first_name%> </h1>
+
+	<h2> Change Settings: </h2>
+</div>
+
+<div>
+	<h3>Update name:</h3>
+  <form action="/setting/<%=@user.id%>/update" method="post">
+		<textarea name="name" required = "required" placeholder="Name..."></textarea>
+		<input type="submit" value="Submit!">
+	</form>
+
+	<h3>Update email:</h3>
+	<form action="/setting/<%=@user.id%>/update" method="post">
+		<textarea name="email" required = "required" placeholder="Email..."></textarea>
+		<input type="submit" value="Submit!">
+	</form>
+
+	<h3>Update username:</h3>
+	<form action="/setting/<%=@user.id%>/update" method="post">
+		<textarea name="username" required = "required" placeholder="Username..."></textarea>
+		<input type="submit" value="Submit!">
+	</form>
+
+	<h3>Update password:</h3>
+	<form action="/setting/<%=@user.id%>/update" method="post">
+		<textarea name="password" required = "required" placeholder="Password..."></textarea>
+		<input type="submit" value="Submit!">
+	</form>
+<div>
