@@ -1,4 +1,8 @@
+require 'bcrypt'
+
 class User < ActiveRecord::Base
+
+include BCrypt
 
   has_many :gnaws
 
@@ -15,5 +19,14 @@ class User < ActiveRecord::Base
 
   # validates :user_name, presence: true
   validates :email, presence: true
+
+  def password
+    @password ||= Passoword.new(password_digest) if password_digest
+  end
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_digest = @password
+  end
 
 end
