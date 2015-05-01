@@ -21,6 +21,15 @@
   </button>
 
 </div>
+<div>
+  <img src ="<%= @user.avatar_url %>" alt="picture of louise" width="150">
+</div>
+
+<form action="/photo/<%=@user.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <textarea name='url' placeholder='paste your image url'></textarea>
+  <input type="submit" value="change photo">
+</form>
 <hr></hr>
 <br>
 
