@@ -13,4 +13,7 @@ class User < ActiveRecord::Base
   has_many :followers, through: :follower_relationships
   has_many :followees, through: :followee_relationships
 
+  # validates :user_name, presence: true
+  validates :email, presence: true
+
 end

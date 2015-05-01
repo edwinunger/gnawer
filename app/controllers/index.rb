@@ -3,7 +3,6 @@ get '/' do
   @user = User.where(id: @id).first
   puts "went to home page"
   erb :index
-
 end
 
 get '/signup' do
@@ -18,7 +17,7 @@ post '/signup' do
     )
   if @user.save
     session[:user_id] = @user.id
-    redirect '/' # redirect to profile page once complete
+    redirect "/profile/#{@user.id}" # redirect to profile page once complete
   else
     status 406
     "Invalid Sign Up Combination"
@@ -34,7 +33,7 @@ post '/login' do
   if @user.password_digest = params[:password]
     status 200
     session[:user_id] = @user.id
-    redirect '/' # redirect to profile page once complete
+    redirect "/profile/#{@user.id}" # redirect to profile page once complete
   else
     "no user FUCK YOU"
   end
