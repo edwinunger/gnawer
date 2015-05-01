@@ -34,6 +34,13 @@ get '/profile/:id' do
 
 end
 
+put '/photo/:id' do
+  @user = User.where(id: params[:id]).first
+  @user.avatar_url = params[:url]
+  @user.save
+  redirect "/profile/#{@user.id}"
+end
+
 get '/all_users' do
   @users = User.all
   @id = session[:user_id]

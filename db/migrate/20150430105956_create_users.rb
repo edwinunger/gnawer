@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :first_name
       t.string :email
       t.string :password_digest
-      t.string :avatar_url, default: "/public/images/gopher.jpg"
+      t.string :avatar_url, default: "http://i.imgur.com/VQ3Lu9l.jpg"
 
       t.timestamps
     end
