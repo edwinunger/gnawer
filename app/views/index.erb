@@ -1,27 +1,30 @@
-
-
-  <h1> Welcome to Gnawer </h1>
-  <h3> Get ready to gnaw your tails off </h3>
-  <h3> you dumb fuck </h3>
-  <%if @id%>
-    <h3> Welcome Back <%=@user.first_name%> </h3>
-  <%end%>
-<form action="login" method="get">
-  <input type="submit" value="Login Already You Asshole"/>
-</form>
-
-<form action="signup" method="get">
-  <input  type="submit" value="Sign Up. YOU DUMB FUCK"/>
-</form>
-  <%if @id%>
-    <div style="display:inline-block;">
-      <button type="button"><a href="/newsfeed/<%=@id%>">Newsfeed</a></button>
-      <button type="button"><a href="/setting/<%=@id%>">Setting</a></button>
-      <button type="button"><a href="/followers/<%=@id%>">Followers</a></button>
-    </div>
-    <form action="/logout" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Log Out"/>
+<div class="homepage">
+  <div class="homepage_text">
+    <h1> Welcome to Gnawer </h1>
+    <h3> Get ready to gnaw your tails off </h3>
+    <h3> you dumb fuck </h3>
+      <%if @id%>
+        <h3> Welcome Back <%=@user.first_name%> </h3>
+      <%end%>
+    <form action="login" method="get">
+      <input type="submit" value="Login Already You Asshole"/>
     </form>
-  <%end%>
-<h3> ..|. inspired by Derek .|.. </h3>
+    <form action="signup" method="get">
+      <input  type="submit" value="Sign Up. YOU DUMB FUCK"/>
+    </form>
+      <%if @id%>
+        <div style="display:inline-block;">
+      <button type="button"><a href="/newsfeed/<%=@id%>">Newsfeed</a>
+      </button>
+      <button type="button"><a href="/setting/<%=@id%>">Setting</a>
+      </button>
+      <button type="button"><a href="/followers/<%=@id%>">Followers</a>
+      </button>
+      <form action="/logout" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Log Out"/>
+      </form>
+      <%end%>
+    <h3> ..|. inspired by Derek .|.. </h3>
+  </div>
+</div>
