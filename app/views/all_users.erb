@@ -1,0 +1,18 @@
+<h1>All Gnawers</h1>
+
+<ul>
+<% @users.each do |user| %>
+
+<li>
+  <a href="<%= "/profile/#{user.id}" %>"><%= user.first_name %>
+  <form action="/profile/<%= user.id %>" method="get">
+    <input type="submit" value="Follow">
+  <form action="/profile/<%= user.id %>" method="get">
+    <input type="submit" value="Unfollow">
+  </form>
+</li>
+
+
+<% end %>
+
+</ul>

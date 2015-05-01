@@ -3,13 +3,19 @@
 
 <div style="display:inline-block;">
   <form action="/logout" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Log Out"/>
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Log Out"/>
   </form>
   <br>
-  <button type="button"><a href="/newsfeed/<%=@user.id%>">Newsfeed</a></button>
-  <button type="button"><a href="/setting/<%=@user.id%>">Setting</a></button>
-  <button type="button"><a href="/followers/<%=@user.id%>">Followers</a></button>
+  <button type="button">
+    <a href="/newsfeed/<%=@user.id%>">Newsfeed</a>
+  </button>
+  <button type="button">
+    <a href="/setting/<%=@user.id%>">Setting</a>
+  </button>
+  <button type="button">
+    <a href="/followers/<%=@user.id%>">Followers</a>
+  </button>
 </div>
 <hr></hr>
 <br>
@@ -29,7 +35,17 @@
   </ol>
 <% end %>
 
+<ul><h3>People I Gnaw</h3>
+<% @followee_users.each do |user| %>
+<li><%= user.first_name %></li>
+<% end %>
+</ul>
 
+<ul><h3>People Who Gnaw Me</h3>
+<% @follower_users.each do |user| %>
+<li><%= user.first_name %></li>
+<% end %>
+</ul>
 
 
 
