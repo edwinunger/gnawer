@@ -13,8 +13,12 @@
 <form action="signup" method="get">
   <input  type="submit" value="Sign Up. YOU DUMB FUCK"/>
 </form>
-
   <%if @id%>
+    <div style="display:inline-block;">
+      <button type="button"><a href="/newsfeed/<%=@id%>">Newsfeed</a></button>
+      <button type="button"><a href="/setting/<%=@id%>">Setting</a></button>
+      <button type="button"><a href="/followers/<%=@id%>">Followers</a></button>
+    </div>
     <form action="/logout" method="post">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="Log Out"/>
