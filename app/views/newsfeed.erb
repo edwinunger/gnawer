@@ -1,10 +1,10 @@
 <h1> <%= @user.first_name %> </h1>
 
-<ul>
+<!-- <ul>
   <% @followees_ids.each do |link_id| %>
   <li> <%= User.where(id: link_id).first.first_name %> </li>
   <% end %>
-</ul>
+</ul> -->
 
 
 <!-- <ul>
@@ -12,3 +12,10 @@
   <li> <%= User.where(id: link_id).first.first_name %> </li>
   <% end %>
 </ul> -->
+<ul>
+<% @followee_tweets.each do |gnaw| %>
+
+<li><%=User.where(id: gnaw.user_id).first.first_name %>: <%= gnaw.content %> <%=gnaw.created_at.strftime("%d %b. %Y") %></li>
+
+<% end %>
+</ul>

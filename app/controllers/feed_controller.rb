@@ -18,8 +18,13 @@ get '/newsfeed/:id' do
     @followees_ids << relationship.followee_id
   end
 
-  @followers_ =
+  @followee_tweets = []
 
+  @followees_ids.each do |link_id|
+    @followee_tweets << @gnaws.where(user_id: link_id)
+  end
+
+  @followee_tweets.flatten!
 
   erb :newsfeed
 end
