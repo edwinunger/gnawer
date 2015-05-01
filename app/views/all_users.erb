@@ -3,18 +3,20 @@
 <ul>
 <% @users.each do |user| %>
 
-<li>
-  <a href="<%= "/profile/#{user.id}" %>"><%= user.first_name %></a>
+  <%next if user.id == @id%>
 
-  <form action="/profile/<%= user.id %>/gnaw" method="post">
-    <input type="submit" value="Gnaw">
-  </form>
+  <li>
+    <a href="<%= "/profile/#{user.id}" %>"><%= user.first_name %></a>
 
-  <form action="/profile/<%= user.id %>/ungnaw" method="post">
-    <input type="hidden" name="_method" value="delete" />
-    <input type="submit" value="Ungnaw" />
-  </form>
-</li>
+    <form action="/profile/<%= user.id %>/gnaw" method="post">
+      <input type="submit" value="Gnaw">
+    </form>
+
+    <form action="/profile/<%= user.id %>/ungnaw" method="post">
+      <input type="hidden" name="_method" value="delete" />
+      <input type="submit" value="Ungnaw" />
+    </form>
+  </li>
 
 
 <% end %>

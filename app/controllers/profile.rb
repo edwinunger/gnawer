@@ -36,6 +36,7 @@ end
 
 get '/all_users' do
   @users = User.all
+  @id = session[:user_id]
   erb :all_users
 end
 
