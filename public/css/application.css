@@ -1,15 +1,21 @@
-.intro {
-  text-align: center;
+body {
+    background-image: url("http://i61.tinypic.com/dp96bq.png");
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: fixed;
+      text-align: center;
+  font-family: Cursive;
+  margin-top: 500px;
 }
 
-.container {
-  margin: 20px auto;
-  width: 800px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+div p {
+  font-size: 30px;
+  font-family: Helvetica;
 }
 
-.container h1 {
-  font-size: 17pt;
-
+input {
+  font-family: Helvetica;
+    text-align: center;
 }
+
+
