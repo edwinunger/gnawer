@@ -1,5 +1,19 @@
 <h2>Hello <%= @user.first_name .capitalize %>, heres all of your previous Gnaws! (ya dumb fuck)</h2>
 
+
+<div style="display:inline-block;">
+  <form action="/logout" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Log Out"/>
+  </form>
+  <br>
+  <button type="button"><a href="/newsfeed/<%=@user.id%>">Newsfeed</a></button>
+  <button type="button"><a href="/setting/<%=@user.id%>">Setting</a></button>
+  <button type="button"><a href="/followers/<%=@user.id%>">Followers</a></button>
+</div>
+<hr></hr>
+<br>
+
 <form action="/profile/<%= @user.id %>/create" method="post">
   <textarea name="content" placeholder="Create a Gnaw"></textarea>
   <input type="submit" value="Post">
@@ -15,12 +29,8 @@
   </ol>
 <% end %>
 
-<hr></hr>
 
-<ul>
-  <li><a href="/newsfeed/<%=@user.id%>">NewsFeed</a></li>
-  <li><a href="/setting/<%=@user.id%>">Account Info</a></li>
-  <!-- <li><a href="/followers"></a></li> -->
-</ul>
+
+
 
 
