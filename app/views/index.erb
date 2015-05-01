@@ -1,25 +1,24 @@
-<div class="intro">
-  <h1> Welcome to Gnawer </h1>
-  <h2> Get ready to gnaw your tails off </h2>
-  <h2> you dumb fuck </h2>
-  <%if @id%>
-  <h2> Welcome Back <%=@user.first_name%> </h3>
-  <%end%>
-<div>
 
+  <h1> Welcome to Gnawer </h1>
+  <h3> Get ready to gnaw your tails off </h3>
+  <h3> you dumb fuck </h3>
+  <%if @id%>
+    <h3> Welcome Back <%=@user.first_name%> </h3>
+  <%end%>
 <form action="login" method="get">
   <input type="submit" value="Login Already You Asshole"/>
 </form>
 
 <form action="signup" method="get">
-  <input type="submit" value="Sign Up. YOU DUMB FUCK"/>
+  <input  type="submit" value="Sign Up. YOU DUMB FUCK"/>
 </form>
 
   <%if @id%>
     <form action="/logout" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Log Out"/>
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Log Out"/>
     </form>
   <%end%>
+<h3> ..|. inspired by Derek .|.. </h3>
 
-<h2> ..|. inspired by Derek .|.. </h2>
+
