@@ -13,7 +13,7 @@ post '/signup' do
   @user = User.new(
     first_name: params[:name],
     email: params[:email],
-    password_digest: params[:password],
+    password: params[:password],
     )
   if @user.save
     session[:user_id] = @user.id
@@ -30,7 +30,7 @@ end
 
 post '/login' do
   @user = User.where(email: params[:email]).first
-  if @user.password_digest = params[:password]
+  if @user.password = params[:password]
     status 200
     session[:user_id] = @user.id
     redirect "/profile/#{@user.id}" # redirect to profile page once complete
