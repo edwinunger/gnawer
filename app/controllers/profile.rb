@@ -1,6 +1,8 @@
 get '/profile/:id' do
   @user = User.where(id: params[:id]).first
   @gnaws = Gnaw.where(user_id: params[:id]).reverse
+  @session_id = session[:user_id]
+  @session_user = User.where(id: @session_id).first
 
   #This gives us all followers of a user
   @followers_relationships = @user.follower_relationships
@@ -47,10 +49,7 @@ end
 post "/profile/:id/create" do
   @gnaw = Gnaw.create(content: params[:content], user_id: params[:id])
   @user_id = @gnaw.user_id
-  # p "==============="
-  # p @user_id
-  # p params[:id]
-  # p "==============="
+
 
   redirect "/profile/#{params[:id]}"
 end

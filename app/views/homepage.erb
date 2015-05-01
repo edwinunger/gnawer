@@ -1,4 +1,4 @@
-<h2>Hello <%= @user.first_name .capitalize %>, heres all of your previous Gnaws! (ya dumb fuck)</h2>
+<h2>Hello <%= @session_user.first_name %>, heres all of <%=@user.first_name%>'s previous Gnaws! (ya dumb fuck)</h2>
 
 
 <div style="display:inline-block;">
@@ -16,6 +16,10 @@
   <button type="button">
     <a href="/followers/<%=@user.id%>">Followers</a>
   </button>
+  <button type="button">
+    <a href="/all_users">All Users</a>
+  </button>
+
 </div>
 <hr></hr>
 <br>
@@ -37,13 +41,13 @@
 
 <ul><h3>People I Gnaw</h3>
 <% @followee_users.each do |user| %>
-<li><%= user.first_name %></li>
+<li><a href="/profile/<%=user.id%>"><%= user.first_name %></a></li>
 <% end %>
 </ul>
 
 <ul><h3>People Who Gnaw Me</h3>
 <% @follower_users.each do |user| %>
-<li><%= user.first_name %></li>
+<li><a href="/profile/<%=user.id%>"><%= user.first_name %></a></li>
 <% end %>
 </ul>
 
